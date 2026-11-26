@@ -558,16 +558,16 @@ export function UploadStudio() {
         )}
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <Button
-            variant="ink"
-            size="xl"
-            className="flex-1"
-            disabled={!source || tooShort || !!reading}
-            onClick={() => source && void run(source)}
-          >
-            <Zap className="fill-current" />
-            Generate study set
-          </Button>
+       <Button
+  variant="ink"
+  size="xl"
+  className="flex-1 w-full min-h-[72px] text-lg font-bold gap-3 border-2 border-ink bg-highlight text-ink shadow-ink-sm hover:bg-highlight sm:min-h-0 sm:bg-ink sm:text-background"
+  disabled={!source || tooShort || !!reading}
+  onClick={() => source && void run(source)}
+>
+  <Zap className="size-6 fill-current" />
+  Generate study set
+</Button>
 
           <Button
             variant="paper"
