@@ -273,14 +273,20 @@ export function UploadStudio() {
       <div className="space-y-6 p-5 sm:p-7">
         {mode === "file" ? (
           loaded ? (
-            <div className="flex items-center gap-4 rounded-xl border-2 border-ink bg-highlight-soft p-4 animate-pop">
+            <div className="flex w-full min-w-0 max-w-full items-center gap-3 overflow-hidden rounded-xl border-2 border-ink bg-highlight-soft p-3 sm:gap-4 sm:p-4 animate-pop">
               <span className="flex size-12 shrink-0 items-center justify-center rounded-lg border-2 border-ink bg-card">
                 <FileText className="size-6" />
               </span>
 
-              <div className="min-w-0 flex-1">
-                <p className="truncate font-semibold">{loaded.name}</p>
-                <p className="font-mono text-xs text-muted-foreground">
+<div className="min-w-0 flex-1 overflow-hidden">
+  <p
+    className="block max-w-full truncate font-semibold"
+    title={loaded.name}
+  >
+    {loaded.name}
+  </p>
+
+  <p className="truncate font-mono text-xs text-muted-foreground">
                   {loaded.pages ? `${loaded.pages} pages · ` : ""}
                   {words.toLocaleString()} words
                   {prepared?.truncated ? " · using first ~10k words" : ""}
